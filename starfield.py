@@ -44,13 +44,13 @@ class Star():
         self.yPos = randint(-SCREENHEIGHT, 0)
 
         if self.speed == 1:
-            self.size = choice([3, 4, 5])
+            self.size = choice([2, 3, 4])
             self.colour = DARK
         elif self.speed == 2:
-            self.size = choice([3, 4, 5])
+            self.size = choice([2, 3, 4])
             self.colour = DARKGREY
         elif self.speed == 3:
-            self.size = choice([2, 3, 4])
+            self.size = choice([1, 2, 3])
             self.colour = LIGHTGREY
 
         """
