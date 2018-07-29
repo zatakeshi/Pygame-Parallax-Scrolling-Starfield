@@ -10,17 +10,19 @@
 import pygame
 from random import randint, choice
 
-#Initialise and system vars
+#Init and system vars
 pygame.init()
 clock = pygame.time.Clock()
+pygame.display.set_caption("Scrolling Parallax Starfield")
 SCREENWIDTH = 640
 SCREENHEIGHT = 480
-
 WHITE = (240, 240, 240)
 LIGHTGREY = (140, 140, 140)
 DARKGREY = (90, 90, 90)
 DARK = (40, 40, 40)
 BLACK = (0, 0, 0)
+screen = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
+exitGame = False
 
 #Starfield
 NUMSTARS = 150
@@ -28,9 +30,6 @@ starList = []
 
 #Controls
 keys = {'left':False, 'right':False}
-exitGame = False
-screen = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
-pygame.display.set_caption("Scrolling Parallax Starfield")
 
 class Star():
     def __init__(self):
@@ -128,7 +127,6 @@ while not exitGame:
     for Star in starList:
         Star.streakDown()
         screen.fill(Star.colour, (Star.xPos, Star.yPos, Star.size, Star.size))
-
     
     pygame.display.flip()
     clock.tick(80)
